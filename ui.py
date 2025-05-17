@@ -52,3 +52,14 @@ def animate_drop(col, row, player_color):
         pygame.display.update()
         pygame.time.wait(50)
 
+
+
+
+
+
+def show_message(message):
+    label = font.render(message, True, RED)
+    screen.blit(label, (40, 10))
+    pygame.display.update()
+
+
