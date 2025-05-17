@@ -65,3 +65,15 @@ def show_message(message):
 
 
 
+
+
+
+def draw_reset_button():
+    y = HEIGHT - SQUARESIZE  # ✅ Move it up by ~10 pixels
+    pygame.draw.rect(screen, WHITE, (WIDTH // 2 - 100, y, 200, 60))  # Full height
+    label = button_font.render("Restart", True, BLACK)
+    screen.blit(label, (WIDTH // 2 - 90, y + 10))
+    pygame.display.update()
+
+
+
