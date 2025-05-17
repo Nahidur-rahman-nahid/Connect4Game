@@ -52,3 +52,34 @@ check_win(player) - Checks if the given player has won
 is_draw() - Detects draw condition
 
 switch_player() - Alternates between players X and O
+
+---
+
+📸 Sample Output
+mathematica
+Copy
+Edit
+. . . . . . .
+. . . . . . .
+. . . . . . .
+. . . . . . .
+. . . . . . .
+. . . X O X .
+0 1 2 3 4 5 6
+📚 License
+This project is open-source and available under the MIT License.
+
+👨‍💻 Author
+Nazmus Shakib
+CSE 604 - Artificial Intelligence
+Mid-Project Submission: Connect Four Game
+
+Feel free to fork, improve, or add AI to play against the computer!
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know if you'd like to include AI logic or a GUI version later — I can help you extend this
