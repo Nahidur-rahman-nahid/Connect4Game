@@ -1,1 +1,46 @@
 
+import pygame
+import sys
+from ConnectFour import ConnectFour
+from ai import get_ai_move, HUMAN_PLAYER, AI_PLAYER
+
+# Constants
+ROW_COUNT = 6
+COLUMN_COUNT = 7
+SQUARESIZE = 100
+RADIUS = SQUARESIZE // 2 - 5
+WIDTH = COLUMN_COUNT * SQUARESIZE
+HEIGHT = (ROW_COUNT + 2) * SQUARESIZE  # +2: one for header, one for reset button
+SCREEN_SIZE = (WIDTH, HEIGHT)
+
+# Colors
+BLUE = (0, 0, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+GRAY = (180, 180, 180)
+
+# Pygame setup
+pygame.init()
+screen = pygame.display.set_mode(SCREEN_SIZE)
+pygame.display.set_caption("Connect Four - Human vs AI")
+font = pygame.font.SysFont("monospace", 60)
+button_font = pygame.font.SysFont("monospace", 40)
+
+def draw_board(board):
+    screen.fill(BLACK)
+    for r in range(ROW_COUNT):
+        for c in range(COLUMN_COUNT):
+            pygame.draw.rect(screen, BLUE, (c * SQUARESIZE, (r + 1) * SQUARESIZE, SQUARESIZE, SQUARESIZE))
+            pygame.draw.circle(screen, BLACK, (c * SQUARESIZE + SQUARESIZE // 2, (r + 1) * SQUARESIZE + SQUARESIZE // 2), RADIUS)
+
+    for r in range(ROW_COUNT):
+        for c in range(COLUMN_COUNT):
+            if board[r][c] == HUMAN_PLAYER:
+                pygame.draw.circle(screen, RED, (c * SQUARESIZE + SQUARESIZE // 2, (r + 1) * SQUARESIZE + SQUARESIZE // 2), RADIUS)
+            elif board[r][c] == AI_PLAYER:
+                pygame.draw.circle(screen, YELLOW, (c * SQUARESIZE + SQUARESIZE // 2, (r + 1) * SQUARESIZE + SQUARESIZE // 2), RADIUS)
+
+    pygame.display.update()
+
