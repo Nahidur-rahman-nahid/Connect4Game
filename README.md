@@ -38,7 +38,7 @@ This is a Python console implementation of the classic **Connect Four** game. Tw
 python connect_four.py
 
 ```
-🛠 How It Works
+## 🛠 How It Works
 ConnectFour class encapsulates the game state and mechanics.
 
 Methods include:
@@ -54,7 +54,7 @@ is_draw() - Detects draw condition
 switch_player() - Alternates between players X and O
 
 ---
-📸 Sample Output
+## 📸 Sample Output
 ```bash
 
 mathematica
@@ -69,14 +69,15 @@ Edit
 0 1 2 3 4 5 6
 
 ```
-📚 License
+---
+## 📚 License
 This project is open-source and available under the MIT License.
-
-👨‍💻 Author
+---
+## 👨‍💻 Author
 Nazmus Shakib
 CSE 604 - Artificial Intelligence
-Mid-Project Submission: Connect Four Game
-
+Mid-Project 1 Submission: Connect Four Game
+--
 Feel free to fork, improve, or add AI to play against the computer!
 
 yaml
