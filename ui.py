@@ -44,3 +44,11 @@ def draw_board(board):
 
     pygame.display.update()
 
+
+def animate_drop(col, row, player_color):
+    for r in range(row + 1):
+        draw_board(game.board)
+        pygame.draw.circle(screen, player_color, (col * SQUARESIZE + SQUARESIZE // 2, (r + 1) * SQUARESIZE + SQUARESIZE // 2), RADIUS)
+        pygame.display.update()
+        pygame.time.wait(50)
+
