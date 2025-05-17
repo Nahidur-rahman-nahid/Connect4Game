@@ -74,7 +74,10 @@ Edit
 This project is open-source and available under the MIT License.
 ---
 ## 👨‍💻 Author
-- Nazmus Shakib
+1.Nazmus Shakib(BSSE-1452)
+2.Nahidur Rahman(BSSE-1429)
+3.Md.Mainuddin(BSSE-1472)
+  
 - CSE 604 - Artificial Intelligence
 - Mid-Project 1 Submission: Connect Four Game
 --
