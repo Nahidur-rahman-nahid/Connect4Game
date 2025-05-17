@@ -36,3 +36,19 @@ This is a Python console implementation of the classic **Connect Four** game. Tw
 
 ```bash
 python connect_four.py
+
+```
+🛠 How It Works
+ConnectFour class encapsulates the game state and mechanics.
+
+Methods include:
+
+print_board() - Displays the game board
+
+drop_token(col) - Places token in a column
+
+check_win(player) - Checks if the given player has won
+
+is_draw() - Detects draw condition
+
+switch_player() - Alternates between players X and O
