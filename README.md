@@ -54,8 +54,9 @@ is_draw() - Detects draw condition
 switch_player() - Alternates between players X and O
 
 ---
-
 📸 Sample Output
+```bash
+
 mathematica
 Copy
 Edit
@@ -66,6 +67,8 @@ Edit
 . . . . . . .
 . . . X O X .
 0 1 2 3 4 5 6
+
+```
 📚 License
 This project is open-source and available under the MIT License.
 
