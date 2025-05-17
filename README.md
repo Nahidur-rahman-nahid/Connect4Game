@@ -43,15 +43,15 @@ ConnectFour class encapsulates the game state and mechanics.
 
 Methods include:
 
-print_board() - Displays the game board
+- print_board() - Displays the game board
 
-drop_token(col) - Places token in a column
+- drop_token(col) - Places token in a column
 
-check_win(player) - Checks if the given player has won
+- check_win(player) - Checks if the given player has won
 
-is_draw() - Detects draw condition
+- is_draw() - Detects draw condition
 
-switch_player() - Alternates between players X and O
+- switch_player() - Alternates between players X and O
 
 ---
 ## 📸 Sample Output
@@ -74,9 +74,9 @@ Edit
 This project is open-source and available under the MIT License.
 ---
 ## 👨‍💻 Author
-Nazmus Shakib
-CSE 604 - Artificial Intelligence
-Mid-Project 1 Submission: Connect Four Game
+- Nazmus Shakib
+- CSE 604 - Artificial Intelligence
+- Mid-Project 1 Submission: Connect Four Game
 --
 Feel free to fork, improve, or add AI to play against the computer!
 
