@@ -67,6 +67,7 @@ def score_position(board, player):
 
     return score
 
+#alpha-beta pruning
 def minimax(board_obj, depth, alpha, beta, maximizing_player):
     board = board_obj.board
     valid_locations = get_valid_moves(board)
