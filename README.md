@@ -80,13 +80,8 @@ This project is open-source and available under the MIT License.
   
 - CSE 604 - Artificial Intelligence
 - Mid-Project 1 Submission: Connect Four Game
---
+
 Feel free to fork, improve, or add AI to play against the computer!
 
-yaml
-Copy
-Edit
 
----
 
-Let me know if you'd like to include AI logic or a GUI version later — I can help you extend this
