@@ -15,23 +15,26 @@ def evaluate_window(window, player):
     score = 0
     opponent = HUMAN_PLAYER if player == AI_PLAYER else AI_PLAYER
 
+    # Strong Winning Condition
     if window.count(player) == 4:
-        score += 100000
-    elif window.count(player) == 3 and window.count(EMPTY) == 1:
-        score += 1000
-    elif window.count(player) == 2 and window.count(EMPTY) == 2:
-        score += 100
+        score += 1_000_000  # Previously 100000; must prioritize sure-win
 
-    # Block opponent aggressively
+    #  Prioritize 3 with open end more strongly
+    elif window.count(player) == 3 and window.count(EMPTY) == 1:
+        score += 5000
+
+    elif window.count(player) == 2 and window.count(EMPTY) == 2:
+        score += 500
+
+    #  DEFENSE: Stronger penalty for opponent's threats
     if window.count(opponent) == 4:
-        score -= 100000
+        score -= 1_000_000
     elif window.count(opponent) == 3 and window.count(EMPTY) == 1:
-        score -= 1200  # must block
+        score -= 6000
     elif window.count(opponent) == 2 and window.count(EMPTY) == 2:
-        score -= 100
+        score -= 500
 
     return score
-
 
 
 def score_position(board, player):
@@ -39,7 +42,7 @@ def score_position(board, player):
 
     # Score center column
     center_array = [board[row][COLUMNS // 2] for row in range(ROWS)]
-    score += center_array.count(player) * 3
+    score += center_array.count(player) * 8
 
     # Score horizontal
     for row in range(ROWS):
@@ -67,7 +70,7 @@ def score_position(board, player):
 
     return score
 
-#alpha-beta pruning
+
 def minimax(board_obj, depth, alpha, beta, maximizing_player):
     board = board_obj.board
     valid_locations = get_valid_moves(board)
@@ -112,7 +115,6 @@ def minimax(board_obj, depth, alpha, beta, maximizing_player):
                 break
         return best_col, value
 
-
-def get_ai_move(game, depth=4):
+def get_ai_move(game, depth=2):
     col, _ = minimax(game, depth, -math.inf, math.inf, True)
     return col
