@@ -67,6 +67,51 @@ def score_position(board, player):
 
     return score
 
+def minimax(board_obj, depth, alpha, beta, maximizing_player):
+    board = board_obj.board
+    valid_locations = get_valid_moves(board)
+    is_terminal = board_obj.check_win(AI_PLAYER) or board_obj.check_win(HUMAN_PLAYER) or board_obj.is_draw()
+
+    if depth == 0 or is_terminal:
+        if board_obj.check_win(AI_PLAYER):
+            return (None, 1_000_000)
+        elif board_obj.check_win(HUMAN_PLAYER):
+            return (None, -1_000_000)
+        elif board_obj.is_draw():
+            return (None, 0)
+        else:
+            return (None, score_position(board, AI_PLAYER))
+
+    if maximizing_player:
+        value = -math.inf
+        best_col = random.choice(valid_locations)
+        for col in valid_locations:
+            temp_game = deepcopy(board_obj)
+            temp_game.drop_token(col, AI_PLAYER)
+            new_score = minimax(temp_game, depth - 1, alpha, beta, False)[1]
+            if new_score > value:
+                value = new_score
+                best_col = col
+            alpha = max(alpha, value)
+            if alpha >= beta:
+                break
+        return best_col, value
+    else:
+        value = math.inf
+        best_col = random.choice(valid_locations)
+        for col in valid_locations:
+            temp_game = deepcopy(board_obj)
+            temp_game.drop_token(col, HUMAN_PLAYER)
+            new_score = minimax(temp_game, depth - 1, alpha, beta, True)[1]
+            if new_score < value:
+                value = new_score
+                best_col = col
+            beta = min(beta, value)
+            if alpha >= beta:
+                break
+        return best_col, value
+
+
 def get_ai_move(game, depth=4):
     col, _ = minimax(game, depth, -math.inf, math.inf, True)
     return col
